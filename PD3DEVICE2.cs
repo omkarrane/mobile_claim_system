@@ -1,4 +1,4 @@
-namespace MVCPD
+namespace DAL
 {
     using System;
     using System.Collections.Generic;
@@ -17,20 +17,20 @@ namespace MVCPD
         [StringLength(50)]
         public string DEVICE_TYPE { get; set; }
 
-        public long? IMEI_NUMBER { get; set; }
+        public long IMEI_NUMBER { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? DATEOFMANUFACTURING { get; set; }
+        public DateTime DATEOFMANUFACTURING { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? DATEOFSHIPPING { get; set; }
+        public DateTime DATEOFSHIPPING { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? DATEOFWARRENTYEXPIRY { get; set; }
+        public DateTime DATEOFWARRENTYEXPIRY { get; set; }
 
         [StringLength(10)]
         public string INWARRENTY { get; set; }
 
-        public decimal? PRICE { get; set; }
+        public decimal PRICE { get; set; }
     }
 }

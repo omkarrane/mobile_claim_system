@@ -1,4 +1,4 @@
-namespace MVCPD
+namespace JDAL
 {
     using System;
     using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace MVCPD
         public string EMAILID { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? DATEOFJOINING { get; set; }
+        public DateTime DATEOFJOINING { get; set; }
 
         [StringLength(50)]
         public string REGION { get; set; }
