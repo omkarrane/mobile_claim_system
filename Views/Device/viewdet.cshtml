@@ -1,0 +1,81 @@
+﻿@model IEnumerable<BO.bo>
+
+@{  
+    Layout =
+               "~/Views/Shared/Layout2.cshtml";
+    ViewBag.Title = "viewdet";
+}
+
+<h2>Device Warranty</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVICEID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVICE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEVICE_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMEI_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEOFMANUFACTURING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEOFSHIPPING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEOFWARRENTYEXPIRY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INWARRENTY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVICEID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVICE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEVICE_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMEI_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEOFMANUFACTURING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEOFSHIPPING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEOFWARRENTYEXPIRY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INWARRENTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRICE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.DEVICEID  }) 
+        </td>
+    </tr>
+}
+
+</table>

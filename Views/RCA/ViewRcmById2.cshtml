@@ -1,0 +1,78 @@
+﻿
+@model IEnumerable<mobileclaim.Models.RcmModel2>
+
+@{
+    Layout =
+       "~/Views/Shared/Layout2.cshtml";
+    ViewBag.Title = "ViewRcmById";
+}
+
+<h2>ViewRcmById</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RcmId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfJoining)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryList)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionList)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RcmId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfJoining)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryList)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegionList)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditRcm", new { RCMId = item.RcmId }) |
+
+                @Html.ActionLink("Delete", "DeleteRcm", new { id = item.RcmId }, new { onclick = "return confirm('Are you sure you want to delete this RCM?');" })
+            </td>
+        </tr>
+    }
+
+</table>

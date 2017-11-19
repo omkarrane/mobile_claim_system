@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MBO.asvbo>
+
+@{
+    Layout =
+       "~/Views/Shared/Layout2.cshtml";
+    ViewBag.Title = "wanted";
+}
+
+<h2>Authorised Service Vendor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AsvId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AsvName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompetencyLevel)
+        </th>
+        <th></th>
+    </tr>
+    @if(Model.Count()==0||Model==null)
+    {<tr>
+    <td colspan="8">not availiable or no data entered for searching
+    </td></tr>
+
+    }
+
+
+@foreach (var item in @Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AsvId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AsvName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompetencyLevel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.AsvId }) |
+            @*@Html.ActionLink("Details", "Details", new {  id=item.AsvId }) |*@
+            @Html.ActionLink("Delete", "Delete", new {  id=item.AsvId })
+        </td>
+    </tr>
+}
+
+</table>

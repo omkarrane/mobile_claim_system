@@ -1,0 +1,66 @@
+﻿@model MVCPD.Models.DeviceModel2
+
+@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+<h2>Device Warranty</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Search</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.DEVICEID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DEVICEID, Model.DEVICEID, new { @class = "form-control" })
+                <input type="submit" value="Search by DEVICEID" class="btn btn-default" name="find" />
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IMEI_NUMBER, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IMEI_NUMBER, Model.IMEI_NUMBER, new { @class = "form-control" })
+                <input type="submit" value="Search by IMEI" class="btn btn-default" name="find" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DATEOFMANUFACTURING, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DATEOFMANUFACTURING, Model.DATEOFMANUFACTURING, new { @class = "form-control" })
+
+                <input type="submit" value="Search by MANUFACTURING" class="btn btn-default" name="find" />
+             
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DATEOFSHIPPING, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DATEOFSHIPPING, Model.DATEOFSHIPPING, new { @class = "form-control" })
+                <input type="submit" value="Search by DATE of SHIPPING" class="btn btn-default" name="find" />
+              
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Terms and Conditions", "Index")
+</div>
+
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
